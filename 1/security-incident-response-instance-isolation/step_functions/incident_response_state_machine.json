@@ -1,0 +1,88 @@
+{
+  "Comment": "Isolate compromised EC2 Instance & Snapshot for Investigation",
+  "StartAt": "ec2IncidentResponse",
+  "States": {
+    "ec2IncidentResponse": {
+      "Type": "Parallel",
+      "Next":"result",
+      "Branches": [
+        {
+          "StartAt": "quarantineEc2InstanceSnapshot",
+          "States": {
+            "quarantineEc2InstanceSnapshot": {
+              "Type": "Task",
+              "Resource": "${quarantineEc2InstanceSnapshotFn.Arn}",
+              "InputPath": "$",
+              "ResultPath": "$",
+              "OutputPath": "$",
+              "End": true,
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "IntervalSeconds": 1,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "StartAt": "quarantineEc2Instance",
+          "States": {
+            "quarantineEc2Instance": {
+              "Type": "Task",
+              "Resource": "${qurantineEc2InstanceFn.Arn}",
+              "InputPath": "$",
+              "ResultPath": "$",
+              "OutputPath": "$",
+              "End": true,
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "IntervalSeconds": 1,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "StartAt": "quarantineIamRole",
+          "States": {
+            "quarantineIamRole": {
+              "Type": "Task",
+              "Resource": "${quarantineIamRoleFn.Arn}",
+              "InputPath": "$",
+              "ResultPath": "$",
+              "OutputPath": "$",
+              "End": true,
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "States.ALL"
+                  ],
+                  "IntervalSeconds": 1,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+  "result":{
+    "InputPath": "$",
+    "ResultPath": "$",
+    "OutputPath": "$",
+    "Type": "Pass",
+    "End": true
+  }
+  }
+}

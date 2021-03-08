@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::ACCOUNT-ID:saml-provider/auth0samlprovider"
+      },
+      "Action": "sts:AssumeRoleWithSAML",
+      "Condition": {
+        "ForAllValues:StringEquals": {
+          "SAML:aud": [
+            "https://signin.aws.amazon.com/saml",
+            "http://localhost:12200/saml"
+          ]
+        }
+      }
+    }
+  ]
+}

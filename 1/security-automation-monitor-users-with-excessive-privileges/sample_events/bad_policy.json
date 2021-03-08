@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "MysteriouslyBadPolicy",
+            "Effect": "Allow",
+            "Action": "s3:Put*",
+            "Resource": "arn:aws:s3:::a-processor-010"
+        },
+        {
+            "Sid": "MysteriouslyBadPolicy02",
+            "Effect": "Allow",
+            "Action": "s3:Get*",
+            "Resource": "*"
+        }
+    ]
+}
