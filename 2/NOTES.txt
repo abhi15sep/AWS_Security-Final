@@ -1,0 +1,50 @@
+1. Security and Compliance is a shared responsibility between AWS and the customer
+> https://aws.amazon.com/compliance/shared-responsibility-model/
+
+2. Is Cloud Secure:
+> https://www.gartner.com/smarterwithgartner/is-the-cloud-secure/
+
+3. AWS Cloud Security - Infrastructure and services to elevate your security in the cloud
+>https://aws.amazon.com/security/
+
+4. AWS Identity and Access Management (IAM)
+> https://aws.amazon.com/iam/
+
+5. Use detective controls to identify a potential security threat or incident
+> https://wa.aws.amazon.com/wat.pillar.security.en.html#sec.detective
+
+6. Network security Features:
+> https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-best-practices.html
+
+7. Protecting data using encryption
+> https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
+
+8. Data privacy:
+> https://aws.amazon.com/compliance/data-privacy-faq/
+
+9. Protect your web applications from common web exploits:
+> https://aws.amazon.com/waf/
+
+10. National Institute of Standards and Technology (NIST)
+> https://aws.amazon.com/compliance/nist/
+
+11. Security by Design:
+> https://aws.amazon.com/compliance/security-by-design/
+
+12. Get started with AWS Organizations | AWS Account Structure | Service Control Policies
+> https://www.youtube.com/watch?v=moHUVdpZQwk
+
+13. AWS IAM Best Practices:
+> https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+
+14. AWS Cloud Trail:
+> https://www.youtube.com/watch?v=N4DdqAkeqD4
+
+15. Certificate Manager:
+https://aws.amazon.com/certificate-manager/
+
+16. Encryption: Key Management Service
+> https://aws.amazon.com/kms/
+
+17. Notify Security findings to your secops:
+> https://www.youtube.com/watch?v=hdRZdTR841A
